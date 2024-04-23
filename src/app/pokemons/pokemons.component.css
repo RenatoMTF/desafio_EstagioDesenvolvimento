@@ -1,0 +1,152 @@
+
+body {
+  background-color: #f1f1f1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box;
+  }
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f2f2f2;
+  }
+
+  .container{
+    min-height: 70vh;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 5vh;
+    flex-direction: column;
+  }
+
+.botao {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  justify-content: left;
+  margin: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: box-shadow .9s ease;
+}
+
+.botao.laranja {
+  background-color: #D96626;
+  color: white;
+}
+.botao.verde {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tabela-Pokemon {
+  width: 70vw;
+  justify-content: center;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border: 1px solid #D96626;
+}
+
+.tabela-Pokemon th, .tabela-Pokemon td {
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #D96626;
+}
+
+.tabela-Pokemon th {
+  background-color: #D96626;
+  color: white;
+  text-transform: uppercase;
+}
+
+.tabela-Pokemon tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para o botão "excluir" */
+.botao.vermelho {
+  background-color: #E53935;
+  color: white;
+}
+.botao.azul {
+  background-color: #64a0ee;
+  color: white;
+}
+.botao:hover{
+  box-shadow: inset 400px 0 0 #00000055;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botao-duelo button,.pesquisa input {
+  flex: 1;
+  margin: 4px;
+  padding: 10px;
+  height: 40px;
+}
+
+.pesquisa input {
+  border: 2px solid #D96626;
+  border-radius: 5px;
+}
+
+
+/* Estilos adicionais para responsividade */
+@media screen and (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .botao-cadastro button,
+  .pesquisa input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    max-width: 768px;
+    width: auto;
+  }
+  .botao.laranja {
+    background-color: #D96626;
+    position: static;
+    width: 60%;
+    font-size: 15px;
+    padding: 0px 10px;
+    height:  6vh;
+  }
+  .tabela-Pokemon {
+    font-size: 12px;
+    font-style: bold;
+    margin-bottom: 3vh;
+  }
+  .tabela-Pokemon th, .tabela-Pokemon td {
+    border: none;
+  }
+  .botao.vermelho,
+  .botao.azul{
+    color: white;
+    font-size: 11px;
+    margin: 3px;
+    width: 15vw;
+    padding: 0px 8px;
+    height:  4vh;
+  }
+
+}

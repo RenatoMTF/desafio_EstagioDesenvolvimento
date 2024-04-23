@@ -1,0 +1,80 @@
+<section >
+  <div class="container ">
+    <div class="acoes">
+      <div class="botao-duelo">
+        <button type="botao" class="botao laranja mobile" (click)="dueloDeForca()">Realizar duelo</button>
+      </div>
+      <div class="pesquisa">
+        <input type="text" placeholder="Buscar Pokémon" [(ngModel)]="termo" (keyup)="filtrarPokemons()">
+      </div>
+    </div>
+  <div class="tabela">
+    <table border="10px" class="tabela-Pokemon">
+      <tr>
+        <th>
+          Nome
+        </th>
+        <th>
+          informaçôes
+        </th>
+        <th>
+          Selecione
+        </th>
+        <th>
+          forca
+        </th>
+      </tr>
+      <tr *ngFor="let Pokemon of filtroPokemons;">
+        <td>
+          {{Pokemon.name}}
+
+        </td>
+
+        <td>
+          <button type="botao"  class="botao azul" (click)="infoPokemon(Pokemon.url)" >ver mais</button>
+        </td>
+        <td>
+          <button type="botao" class="botao verde" (click)="escolherPokemon(Pokemon.url)" >escolher</button>
+          <button type="botao" class="botao vermelho" (click)="removerPokemon(Pokemon.url)" >remover</button>
+        </td>
+
+        <td>
+          <div *ngIf="Pokemon.forca> 0">
+          {{Pokemon.forca}}
+          </div>
+          <div *ngIf="!Pokemon.forca || Pokemon.forca ==0">
+            ---
+          </div>
+      </td>
+      </tr>
+
+    </table>
+
+    <p-dialog header="Resultado dos duelos:" [(visible)]="resultadoDialog" [style]="{width: '50vw'}">
+      <p>
+          {{textoVencedor}}
+      </p>
+  </p-dialog>
+
+  <p-dialog :header="Veja os dados do {{name}}" [(visible)]="infoDialog" [style]="{width: '50vw'}">
+
+    <p>
+     <strong> *NOME: </strong>{{name}}
+    </p>
+    <p>
+      <strong>*ID:</strong> {{id}}
+    </p>
+    <p>
+      <strong>*TAMANHO:</strong> {{height}}cm x {{weight}}cm
+    <p>
+      <strong>*ORDEM:</strong> {{order}}
+    </p>
+    <p>
+      <strong>*FORÇA DE ATAQUE:</strong> {{forca}}
+    </p>
+  </p-dialog>
+  </div>
+</div>
+</section>
+
+
